@@ -1,17 +1,17 @@
 from dash import html
 from dash import dcc
 
-def espacio_layout():
+def vias_layout():
     return html.Div([
-        html.H1("Espacio publico"),
+        html.H1("Vias"),
         html.Div([
-            html.Label('Selecione el Espacio', style={'margin-right': '10px'}),
+            html.Label('Tipo de Via', style={'margin-right': '10px'}),
             dcc.Dropdown(
                 id='dropdown',
                 options=[
-                    {'label': 'Andenes en adoquin', 'value': 'adoquna'},
-                    {'label': 'Andenes en concreo', 'value': 'concre'},
-                    {'label': 'Andenes tipo IDU', 'value': 'IDU'}
+                    {'label': 'Via Pavimento Flexible', 'value': 'flexible'},
+                    {'label': 'Via Pavimento Rigido', 'value': 'rigido'},
+                    {'label': 'Via adoquin', 'value': 'adoquinv'}
                 ],
                 value='Elige el sistema',
                 style={'width': '300px'}
@@ -23,6 +23,6 @@ def espacio_layout():
         ], style={'margin-bottom': '10px'}),  # Establece un margen inferior para separarlo de los demás inputs
         html.Div([
             html.Label('Ancho'),
-            dcc.Input(id='Ancho', type='text', placeholder='Ancho')
-        ], style={'margin-bottom': '10px'})  # Establece un margen inferior para separarlo de los demás inputs
+            dcc.Input(id='p_inicial', type='text', placeholder='(m)')
+        ], style={'margin-bottom': '10px'}),  # Establece un margen inferior para separarlo de los demás inputs
     ])
